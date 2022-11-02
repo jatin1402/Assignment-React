@@ -9,9 +9,9 @@ function App() {
       <header className="App-header">
       <BrowserRouter>
       <Routes>
-        <Route exact path="/" element={<Homepage />}>
-          <Route exact path="/editInfo" element={<Editpage />} />
-        </Route>
+          <Route  path="/" element={<Homepage />} />
+          <Route  path="editInfo" element={<Editpage />} />
+        
       </Routes>
     </BrowserRouter>
       

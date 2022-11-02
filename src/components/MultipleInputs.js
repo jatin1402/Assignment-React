@@ -1,46 +1,37 @@
 import React from 'react'
-import { useState } from 'react'
+import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { AppContext } from '../context';
 
 export default function MultipleInputs() {
 
     const history = useNavigate();
 
-    const [userInfo,setUserInfo] = useState({
-        address : "",
-        city : "",
-        state: "",
-        zipCode : "",
-        email : ""
-    })
+    const {userInfo, setUserInfo} = useContext(AppContext)
 
     const handleChange = (e)=>{
         const name = e.target.name;
         const value= e.target.value;
-
         
         setUserInfo({...userInfo, [name]: value})
     }
 
     const handleSubmit = (e)=>{
         e.preventDefault();
-        console.log("submitted")
+        history("/")
+    }
+
+    const handleCancel = (e) =>{
+        e.preventDefault();
         history("/")
     }
 
   return (
     <div>
-
-        <h1>
-            header
-        </h1>
-        <div>
-            basic Info
-        </div>
-        <form action = "" >
+        <form action = "" onSubmit={handleSubmit} >
             <div>
             <label >
-                Address:
+                Address
             </label><br/>
             <input type="text" name = "address" value={userInfo.address} required onChange={(e) => {handleChange(e)}} />
             </div>
@@ -69,14 +60,13 @@ export default function MultipleInputs() {
             <input type="text" name = "email" value={userInfo.email} required onChange={(e) => {handleChange(e)}} />
             </div>
             <div display="flex">
-            <button>
+            <button type='submit' onClick={handleCancel}>
                 Cancel
             </button>
-            <button onClick={handleSubmit}>
+            <button type='submit'>
                 Save
             </button>
-            </div>
-            
+            </div>  
         </form>
     </div>
   )

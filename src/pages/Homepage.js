@@ -1,22 +1,46 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { useNavigate } from 'react-router-dom';
+import BasicInfo from '../components/BasicInfo';
+import { AppContext } from '../context';
 
-export default function Homepage(props) {
+export default function Homepage() {
 
     const history = useNavigate();
-    
-    // const {userInfo} = props;
-    // const {address, city, state, zipCode, email} = userInfo;
+    const {userInfo} = useContext(AppContext)
+
     const hanldeEditButton = (e) =>{
         e.preventDefault();
-        history("/editInfo")
+        history("/editinfo")
     }
 
     return (
         <div>
-            <button onClick={hanldeEditButton}>
+            <BasicInfo />
+            <h1>Contact Information</h1>
+            <button onClick={hanldeEditButton} >
                 Edit info
             </button>
+
+            <div>
+                <h4>Address: </h4>
+                <p>{userInfo.address}</p>
+            </div>
+            <div>
+                <h4>City: </h4>
+                <p>{userInfo.city}</p>
+            </div>
+            <div>
+                <h4>zipCode: </h4>
+                <p>{userInfo.zipCode}</p>
+            </div>
+            <div>
+                <h4>State: </h4>
+                <p>{userInfo.state}</p>
+            </div>
+            <div>
+                <h4>Email: </h4>
+                <p>{userInfo.email}</p>
+            </div>
         </div>
     )
 }
