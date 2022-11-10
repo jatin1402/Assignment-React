@@ -3,18 +3,18 @@ import React from 'react'
 export default function BasicInfo() {
   return (
     <div>
-        <h1>Basic Information</h1>
-        <p>
-            <h4>First Name</h4>
-            <h3>Trimoorty</h3>
+        <h4>Basic Information</h4>
+        
+          <div className="mb-3">
+          <div className="font-weight-light">First Name</div>
+            <div>Trimoorty</div>
             
-            <h4>Last Name</h4>
-            <h3>Bhattacharya</h3>
+            <div className="font-weight-light">Last Name</div>
+            <div>Bhattacharya</div>
 
-            <h4>SSN</h4>
-            <h3>XXXX-XXXX-9876</h3>
-        </p>
-
+            <div className="font-weight-light">SSN</div>
+            <div>XXXX-XXXX-9876</div>
+          </div>
     </div>
   )
 }

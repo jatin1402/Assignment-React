@@ -5,9 +5,9 @@ import MultipleInputs from '../components/MultipleInputs'
 
 export default function Editpage() {
   return (
-    <div>
+    <div className='container mt-3'>
         <BasicInfo />
-        <h1>Contact Information</h1>
+        <h4>Contact Information</h4>
         <MultipleInputs />
     </div>
   )

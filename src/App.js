@@ -5,17 +5,18 @@ import Homepage from './pages/Homepage';
 // import Homepage from './components/Homepage';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-      <BrowserRouter>
-      <Routes>
-          <Route  path="/" element={<Homepage />} />
-          <Route  path="editInfo" element={<Editpage />} />
+    <div className="container">
+      <div className='card'>
+        <div className='card-body bg-light'>
+          <BrowserRouter>
+          <Routes>
+            <Route  path="/" element={<Homepage />} />
+            <Route  path="editInfo" element={<Editpage />} />
         
-      </Routes>
-    </BrowserRouter>
-      
-      </header>
+          </Routes>
+          </BrowserRouter>
+        </div>
+      </div>
     </div>
   );
 }

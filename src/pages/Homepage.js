@@ -14,32 +14,32 @@ export default function Homepage() {
     }
 
     return (
-        <div>
+        <div  className="container mt-3" >
             <BasicInfo />
-            <h1>Contact Information</h1>
+            <h4>Contact Information</h4>
             <button onClick={hanldeEditButton} >
                 Edit info
             </button>
 
-            <div>
-                <h4>Address: </h4>
-                <p>{userInfo.address}</p>
+            <div className='mb-3'>
+                <div className="font-weight-light">Address: </div>
+                <div >{userInfo.address}</div>
             </div>
-            <div>
-                <h4>City: </h4>
-                <p>{userInfo.city}</p>
+            <div className='mb-3'>
+                <div className="font-weight-light">City: </div>
+                <div >{userInfo.city}</div>
             </div>
-            <div>
-                <h4>zipCode: </h4>
-                <p>{userInfo.zipCode}</p>
+            <div className='mb-3'>
+                <div className="font-weight-light">zipCode: </div>
+                <div >{userInfo.zipCode}</div>
             </div>
-            <div>
-                <h4>State: </h4>
-                <p>{userInfo.state}</p>
+            <div className='mb-3'>
+                <div className="font-weight-light">State: </div>
+                <div >{userInfo.state}</div>
             </div>
-            <div>
-                <h4>Email: </h4>
-                <p>{userInfo.email}</p>
+            <div className='mb-3'>
+                <div className="font-weight-light">Email: </div>
+                <div >{userInfo.email}</div>
             </div>
         </div>
     )
